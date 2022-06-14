@@ -47,10 +47,6 @@ suppressPackageStartupMessages(require("CompQuadForm", quietly = TRUE))
 #' @param trimmedPerFilteringIteration Number of samples trimmed at each
 #'   iteration of the unimodality and normality filtering (default: 1), see
 #'   [filter_outliers()]
-#' @param exitWhenUnimodal Logical value. `TRUE` will terminate the execution of
-#'   the algorithm as soon as an unimodal subset is encountered on the start of
-#'   a global iteration. `FALSE` (default) will let that last iteration proceed
-#'   before terminating
 #' @param debug Logical value. `TRUE` will compute all p.values in the filtering
 #'   steps (even after they exceed the selection threshold, see
 #'   [plot.BRIC.Filtering()])
@@ -61,7 +57,7 @@ suppressPackageStartupMessages(require("CompQuadForm", quietly = TRUE))
 #'   \item{`call`}{Parameters of the call (contains `data`,
 #'   `maxIterations`, `minUnassigned`, `nsamp`, `method`, `alpha`, `testUnimodal`,
 #'   `threshUnimodal`, `distUnimodal`, `testNormal`, `threshNormal`,
-#'   `distNormal`, `trimmedPerFilteringIteration`, and `exitWhenUnimodal`)}
+#'   `distNormal`, and `trimmedPerFilteringIteration`)}
 #'   \item{`iterations`}{A list with every global iteration of the algorithm,
 #'   each containing the two filtering procedures performed: `filteringUnimodal`
 #'   and `filteringNormal` (both being S3 object of class `BRIC.Filtering`, see
@@ -111,8 +107,7 @@ clustBRIC <- function(data, maxIterations = 0, minUnassigned = 0.1, nsamp = "bes
                  method = "Projection", alpha = 0.5,
                  testUnimodal = "DIP", threshUnimodal = 0.05, distUnimodal = "Euclidean",
                  testNormal = "Mardia", threshNormal = 0.05, distNormal = "MCD",
-                 trimmedPerFilteringIteration = 1, exitWhenUnimodal = FALSE,
-                 debug = FALSE, warnings = FALSE) {
+                 trimmedPerFilteringIteration = 1, debug = FALSE, warnings = FALSE) {
 
   DEV_DEBUG <- FALSE
 

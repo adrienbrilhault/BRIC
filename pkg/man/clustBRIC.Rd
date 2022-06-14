@@ -18,7 +18,6 @@ clustBRIC(
   threshNormal = 0.05,
   distNormal = "MCD",
   trimmedPerFilteringIteration = 1,
-  exitWhenUnimodal = FALSE,
   debug = FALSE,
   warnings = FALSE
 )
@@ -78,11 +77,6 @@ normality tests.}
 iteration of the unimodality and normality filtering (default: 1), see
 \code{\link[=filter_outliers]{filter_outliers()}}}
 
-\item{exitWhenUnimodal}{Logical value. \code{TRUE} will terminate the execution of
-the algorithm as soon as an unimodal subset is encountered on the start of
-a global iteration. \code{FALSE} (default) will let that last iteration proceed
-before terminating}
-
 \item{debug}{Logical value. \code{TRUE} will compute all p.values in the filtering
 steps (even after they exceed the selection threshold, see
 \code{\link[=plot.BRIC.Filtering]{plot.BRIC.Filtering()}})}
@@ -95,7 +89,7 @@ following values:
 \item{\code{call}}{Parameters of the call (contains \code{data},
 \code{maxIterations}, \code{minUnassigned}, \code{nsamp}, \code{method}, \code{alpha}, \code{testUnimodal},
 \code{threshUnimodal}, \code{distUnimodal}, \code{testNormal}, \code{threshNormal},
-\code{distNormal}, \code{trimmedPerFilteringIteration}, and \code{exitWhenUnimodal})}
+\code{distNormal}, and \code{trimmedPerFilteringIteration})}
 \item{\code{iterations}}{A list with every global iteration of the algorithm,
 each containing the two filtering procedures performed: \code{filteringUnimodal}
 and \code{filteringNormal} (both being S3 object of class \code{BRIC.Filtering}, see

@@ -25,7 +25,7 @@ order them (array of numerical two values, for X and Y)}
 \item{test}{Statistical test to use. Valid options are "DIP" for unimodality
 test, "Mardia", "Kurtosis", "Skewness", "KS", "KS-adj", "Shapiro",
 "Lillie", and "Chisq" for multivariate normality test, or a  or a
-user-defined function (see details)}
+user-defined function (see details below)}
 
 \item{threshold}{Threshold of significance for the statistical test (between
 0 and 1, default: 0.05)}
@@ -64,9 +64,12 @@ robust estimate estimates of location and scatter ("MCD","MVE", or "OGK")
 
 For user-defined functions, the function should output the p.value of the
 test (between 0 and 1), and receive the 3 following arguments:
-\itemize{\item{\code{data}}{ - the matrix of observations} \item{\code{center}}{ -
-estimate of the center of the observations} \item{\code{distances}}{ - distances
-from each observations to the \code{center} (based on \code{distType} metric)}}
+\itemize{
+\item{\code{data}}{ - the matrix of observations}
+\item{\code{center}}{ - estimate of the center of the observations}
+\item{\code{distances}}{ - distances from each observations to the \code{center}
+(based on \code{distType} metric)}
+}
 }
 \examples{
 
