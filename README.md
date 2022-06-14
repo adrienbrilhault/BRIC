@@ -54,6 +54,7 @@ remotes::install_github("adrienbrilhault/BRIC", subdir = "pkg")
 ```
 
 <br>
+
 *Note: As of May 2022, the
 [OjaNP](https://cran.r-project.org/web/packages/OjaNP/) package - one of
 BRIC's dependencies - has been removed from the main CRAN repository.
